@@ -1,30 +1,45 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <Profile />
+  <GitHub />
+  <img src="/images/logo.png" alt="Knights Base Logo" class="logo">
+  <Pages />
   <router-view/>
 </template>
+<script>
+import Profile from './components/Profile.vue';
+import GitHub from './components/Github.vue';
+import Pages from './components/Pages.vue';
+
+export default {
+  name: 'AppVue',
+  components: {
+    Profile,
+    GitHub,
+    Pages,
+  },
+};
+</script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-nav {
-  padding: 30px;
+body {
+  background-color: #8338ec;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
 }
+</style>
 
-nav a.router-link-exact-active {
-  color: #42b983;
+<style scoped>
+.logo {
+  width: 400px;
+  margin: 80px auto 0px auto;
+  display: block;
 }
 </style>
